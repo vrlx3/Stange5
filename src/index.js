@@ -1,6 +1,7 @@
 import axios from 'axios'
 import React from 'react'
 import ReactDOM from 'react-dom'
+import {Header} from './components'
 
 
 const BASE = 'https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/posts'
@@ -21,17 +22,7 @@ axios.get(BASE)
     console.log(error);
 })
 
-const Header = () => {
-    return (
-        <div id='header'>
-            <div id='navbar'>
-                <div>Home</div>
-                <div>Posts</div>
-                <div>Login</div>
-             </div>
-         </div>
-    )
-}
+
 
 const App = () => {
     return (
