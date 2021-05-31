@@ -1,2 +1,18 @@
 test notes
-1324
+<div id='header'>
+    <div id='navbar'>
+        <div>Home</div>
+        <div>Posts</div>
+        <div>Login</div>
+    </div>
+</div>
+
+<header>
+            <nav>  
+                <ul >   
+                <li> Home  </li>  
+                <li> Posts </li>  
+                <li> Login </li>   
+                </ul>  
+            </nav> 
+        </header>
