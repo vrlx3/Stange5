@@ -3,12 +3,16 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 
 
-axios.get('https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/posts')
+const BASE = 'https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/posts'
+
+const TOKEN = '' // Some token
+
+
+axios.get(BASE)
 .then(function (response) {
     const data = response.data.data;
     const posts = data.posts;
-    console.log(data)
-    console.log(posts);
+    console.log('post', posts)
     console.log(posts[0])
     console.log(posts[0].description)
 
@@ -17,21 +21,27 @@ axios.get('https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/posts')
     console.log(error);
 })
 
-
-
-const descr = () => {
+const Header = () => {
     return (
-        posts[0].description 
+        <div id='header'>
+            <div id='navbar'>
+                <div>Home</div>
+                <div>Posts</div>
+                <div>Login</div>
+             </div>
+         </div>
     )
 }
-
-
 
 const App = () => {
     return (
     <div>
-        <h1>new world</h1>
-        <h2>This is the new world</h2>
+        <Header/>
+    
+        <div id='page'>
+            <h1>new world</h1>
+            <h2>This is the new world</h2>
+        </div>
     </div>
     )
 }
