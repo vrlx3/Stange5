@@ -26,7 +26,7 @@ axios.get(BASE)
 
 const App = () => {
     return (
-    <div>
+    <div id='app'>
         <Header/>
     
         <div id='page'>
