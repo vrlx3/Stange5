@@ -1,7 +1,7 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
-import {Header, Reguser} from './components'
+import {Header, Reguser, RenderPosts} from './components'
 
 
 
@@ -52,6 +52,7 @@ const App = () => {
         </div>
 
         <Reguser/>
+        <RenderPosts/>
     </div>
     )
 }
