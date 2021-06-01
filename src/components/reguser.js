@@ -24,13 +24,17 @@ const Reguser = () => {
 
     return (<div id='reguser'>
             <form onSubmit={ () => {
+                //send fetch post with vars username and password to url.../register
+
+                // save token received in somewhere // local Storage
+                // 
                 
                 }
             
             }>
-            <input id='username' type='text' placeholder='Choose Username' onChange={ (e) => {setUsername(e.target.value)}}></input>
+            <input id='username' type='form' placeholder='Choose Username' onChange={ (e) => {setUsername(e.target.value); console.log(username); return username }}></input>
             <p></p>
-            <input id='password' type='text' placeholder='Choose Password' onChange={ (e) => {setPassword(e.target.value)}}></input>
+            <input id='password' type='form' placeholder='Choose Password' onChange={ (e) => {setPassword(e.target.value)}}></input>
             <p></p>
             <button type='submit' >Register</button>
             </form>
