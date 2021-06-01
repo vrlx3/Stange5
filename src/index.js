@@ -5,23 +5,30 @@ import {Header} from './components'
 
 
 const BASE = 'https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/posts'
+const BASE2 = 'https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT'
 
 const TOKEN = '' // Some token
 
 
+// axios.get(BASE)
+// .then(function (response) {
+//     const data = response.data.data;
+//     const posts = data.posts;
+//     console.log('post', posts)
+//     console.log(posts[0])
+//     console.log(posts[0].description)
+
+// })
+// .catch(function (error) {
+//     console.log(error);
+// })
+
 axios.get(BASE)
 .then(function (response) {
-    const data = response.data.data;
-    const posts = data.posts;
-    console.log('post', posts)
-    console.log(posts[0])
-    console.log(posts[0].description)
-
+    console.log(response)
+    return response
+    
 })
-.catch(function (error) {
-    console.log(error);
-})
-
 
 
 const App = () => {
