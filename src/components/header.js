@@ -3,7 +3,7 @@ const Header = () => {
         <div id='header'>
             <div id='navbar'>
                 <div>Home</div>
-                <button onClick={Posts}>Posts</button>
+                <div>Posts</div>
                 <div>Login</div>
              </div>
          </div>
