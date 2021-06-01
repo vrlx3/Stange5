@@ -10,18 +10,30 @@ const BASE = 'https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/'
 const TOKEN = '' // Some token
 
 
-axios.get(BASE)
-.then(function (response) {
-    const data = response.data.data;
-    const posts = data.posts;
-    console.log('post', posts)
-    console.log(posts[0])
-    console.log(posts[0].description)
+// axios.get(BASE)
+// .then(function (response) {
+//     const data = response.data.data;
+//     const posts = data.posts;
+//     console.log('post', posts)
+//     console.log(posts[0])
+//     console.log(posts[0].description)
 
-})
-.catch(function (error) {
-    console.log(error);
-})
+// })
+// .catch(function (error) {
+//     console.log(error);
+// })
+
+await axios.post('https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/users/register', {
+
+
+    uRegister,
+    {
+        headers: {
+            Content-Type:'application/json' 
+        }
+
+    } 
+
 
 
 const App = () => {
