@@ -20,8 +20,8 @@ const Reguser = () => {
                     },
                     body: JSON.stringify({
                       user: {
-                        username: {username},
-                        password: {password}
+                        username,
+                        password
                         }
                     })
                   }).then(response => response.json())
