@@ -29,13 +29,18 @@ const Reguser = () => {
                     .then(result => {
                         
                       console.log(result);
-                      
+                      const token = result.data.token;
+                      console.log(token)
+                      localStorage.setItem("token", token)
                     })
                     
                     .catch(console.error);
+                
+
+                   
                     // .then(return result)
                     // const token = response.data.token;
-                    // localStorage.setItem(“token”, token)
+                    
                     // console.log('user/pass ', username, password)
                     // console.log(response.data.token)
                 
