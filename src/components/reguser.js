@@ -7,33 +7,35 @@ const Reguser = () => {
     const [password, setPassword] = useState('')
 
     return (<div id='reguser'>
-            <form onSubmit={ () => {
+            <form onSubmit={  (ev) => {
                 //send fetch post with vars username and password to url.../register
 
                 // save token received in somewhere // local Storage
                 // 
-            
-                fetch('https://strangers-things.herokuapp.com/api/COHORT-NAME/users/register', {
+                ev.preventDefault();
+                fetch('https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/users/register', {
                     method: "POST",
                     headers: {
                       'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
                       user: {
-                        username: document.getElementById('username'),
-                        password: document.getElementById('password')
-                      }
+                        username: {username},
+                        password: {password}
+                        }
                     })
                   }).then(response => response.json())
                     .then(result => {
                       console.log(result);
                     })
                     .catch(console.error);
+                    // console.log('user/pass ', username, password)
+                    // console.log(response.data.token)
             
             }}>
-            <input id='username' type='text' placeholder='Choose Username' onChange={ (e) => {setUsername(e.target.value)}}></input>
+            <input id='username' type='text' placeholder='Choose Username' value={username} onChange={ (e) => {setUsername(e.target.value)}}></input>
             <p></p>
-            <input id='password' type='form' placeholder='Choose Password' onChange={ (e) => {setPassword(e.target.value)}}></input>
+            <input id='password' type='text' placeholder='Choose Password' value={password} onChange={ (e) => {setPassword(e.target.value)}}></input>
             <p></p>
             <button type='submit' >Register</button>
             </form>
