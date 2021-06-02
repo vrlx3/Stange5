@@ -40,14 +40,23 @@ const Reguser = () => {
 =======
                         
                       console.log(result);
-                      
+                      const token = result.data.token;
+                      console.log(token)
+                      localStorage.setItem("token", token)
                     })
                     
                     .catch(console.error);
+                
+
+                   
                     // .then(return result)
                     // const token = response.data.token;
+<<<<<<< HEAD
                     // localStorage.setItem(“token”, token)
 >>>>>>> 06a3d4076ecb932ada852f265241870516ab4132
+=======
+                    
+>>>>>>> 07bed1752d66922b68061ddefc5adb968edeb8d2
                     // console.log('user/pass ', username, password)
                     // console.log(response.data.token)
                 
