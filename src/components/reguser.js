@@ -1,22 +1,6 @@
 import React, {useState} from 'react'
 
 
-const newuser = () => {
-    //extract info from form below and run 
-   
-
-
-    // username & password
-
-
-
-    // update token variable
-    // Welcome mr. superman
-
-    console.log('new user register attempt')
-    // console.log('username ', username)
-}
-
 const Reguser = () => {
 
     const [username, setUsername] = useState('')
