@@ -8,7 +8,7 @@ const Reguser = () => {
     const [token, setToken] = useState('')
 
     return (<div id='reguser'>
-            <form onSubmit={  (ev) => {
+            <form onSubmit={async  (ev) => {
                 //send fetch post with vars username and password to url.../register
 
                 // save token received in somewhere // local Storage
@@ -28,13 +28,14 @@ const Reguser = () => {
                   }).then(response => response.json())
                     
                     .then(result => {
-                    console.log(result);
+                    console.log(result.data.token);
+                    setToken(result.data.token)
                     })
-                    setToken(response.data.token)
+                    
                     .catch(console.error);
 
                 
-                    
+                    console.log(token)
 
                     // console.log('user/pass ', username, password)
                     // console.log(response.data.token)
@@ -52,6 +53,8 @@ const Reguser = () => {
 
 }
 
-export default {Reguser, token};
+export default Reguser;
+
+
 
 

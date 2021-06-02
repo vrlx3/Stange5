@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
-import {token} from './reguser'
+// import {token} from './reguser'
+import Reguser from './reguser'
 
 const Create = () => {
     const [title, setTitle] = useState([])
