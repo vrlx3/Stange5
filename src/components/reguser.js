@@ -1,4 +1,6 @@
+import axios from 'axios'
 import React, {useState} from 'react'
+const regurl = 'https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/users/login'
 
 
 const newuser = () => {
@@ -21,18 +23,14 @@ const Reguser = () => {
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const onSubmit = () => {console.log(username)}
+
+
+
 
     return (<div id='reguser'>
-            <form onSubmit={ () => {
-                //send fetch post with vars username and password to url.../register
-
-                // save token received in somewhere // local Storage
-                // 
-                
-                }
-            
-            }>
-            <input id='username' type='text' placeholder='Choose Username' onChange={ (e) => {setUsername('hello'); return username }}></input>
+            <form onSubmit={ () => {onSubmit}}>
+            <input id='username' type='text' placeholder='Choose Username' onChange={ (e) => {setUsername(e.target.value)}}></input>
             <p></p>
             <input id='password' type='form' placeholder='Choose Password' onChange={ (e) => {setPassword(e.target.value)}}></input>
             <p></p>

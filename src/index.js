@@ -39,7 +39,7 @@ const App = () => {
     .catch(console.error);
     }
     
-    console.log(token)
+
     return (
     <div id='app'>
         <Header/>
