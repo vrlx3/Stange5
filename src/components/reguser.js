@@ -7,7 +7,12 @@ const Reguser = () => {
     const [password, setPassword] = useState('')
     const [token, setToken] = useState('')
 
-    const handleSubmit = () =>{async  (ev) => {
+    const handleSubmit = () =>{
+
+    }
+
+    return <div id='reguser'>
+            <form onSubmit={async  (ev) => {
         ev.preventDefault();
         fetch('https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/users/register', {
           method: "POST",
@@ -29,12 +34,7 @@ const Reguser = () => {
           .catch(console.error);
           console.log(token)
                       
-      }
-
-    }
-
-    return <div id='reguser'>
-            <form onSubmit={handleSubmit()}>
+      }}>
             <input id='username' type='text' placeholder='Choose Username' value={username} onChange={ (e) => {setUsername(e.target.value)}}></input>
             <p></p>
             <input id='password' type='text' placeholder='Choose Password' value={password} onChange={ (e) => {setPassword(e.target.value)}}></input>
