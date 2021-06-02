@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {token} from './reguser'
 
 const Create = () => {
     const [title, setTitle] = useState([])
@@ -8,17 +9,17 @@ const Create = () => {
         ev.preventDefault();
         console.log('title, description ', title, description);
 
-        const response = await fetch('https://strangers-things.herokuapp.com/api/COHORT-NAME/users/register', {
+        const response = await fetch('https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/posts', {
                                              method: 'POST',
                                              headers: {
-                                                        'Content-Type': 'application/json',
-                                                        'Authorization': 'Bearer '
-                                                                       
-                                                        },
-                                            body: JSON.stringify({
-                                                                    title,
-                                                                    description,                        
-                                                                    })   
+                                                'Content-Type': 'application/json',
+                                                'Authorization': 'Bearer'+{token}
+                                            },
+                                             body: JSON.stringify({
+                                               post: {title: 'Viral & Gio Project',
+                                                    description: 'Awesome'   
+                                             }                     
+                                                    })   
                                             })
         const data = await response.json();
         console.log('data ', data);

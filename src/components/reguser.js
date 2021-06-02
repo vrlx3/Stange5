@@ -5,6 +5,7 @@ const Reguser = () => {
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const [token, setToken] = useState('')
 
     return (<div id='reguser'>
             <form onSubmit={  (ev) => {
@@ -25,10 +26,16 @@ const Reguser = () => {
                         }
                     })
                   }).then(response => response.json())
+                    
                     .then(result => {
-                      console.log(result);
+                    console.log(result);
                     })
+                    setToken(response.data.token)
                     .catch(console.error);
+
+                
+                    
+
                     // console.log('user/pass ', username, password)
                     // console.log(response.data.token)
             
@@ -45,4 +52,6 @@ const Reguser = () => {
 
 }
 
-export default Reguser;
+export default {Reguser, token};
+
+
