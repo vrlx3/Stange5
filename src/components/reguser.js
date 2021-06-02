@@ -5,7 +5,6 @@ const Reguser = () => {
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-    const [token, setToken] = useState('')
 
     return (<div id='reguser'>
             <form onSubmit={async  (ev) => {
@@ -26,8 +25,9 @@ const Reguser = () => {
                         }
                     })
                   }).then(response => response.json())
-                    
+                   
                     .then(result => {
+<<<<<<< HEAD
                     console.log(result.data.token);
                     setToken(result.data.token)
                     })
@@ -37,9 +37,20 @@ const Reguser = () => {
                 
                     console.log(token)
 
+=======
+                        
+                      console.log(result);
+                      
+                    })
+                    
+                    .catch(console.error);
+                    // .then(return result)
+                    // const token = response.data.token;
+                    // localStorage.setItem(“token”, token)
+>>>>>>> 06a3d4076ecb932ada852f265241870516ab4132
                     // console.log('user/pass ', username, password)
                     // console.log(response.data.token)
-            
+                
             }}>
             <input id='username' type='text' placeholder='Choose Username' value={username} onChange={ (e) => {setUsername(e.target.value)}}></input>
             <p></p>
@@ -54,7 +65,10 @@ const Reguser = () => {
 }
 
 export default Reguser;
+<<<<<<< HEAD
 
 
 
 
+=======
+>>>>>>> 06a3d4076ecb932ada852f265241870516ab4132

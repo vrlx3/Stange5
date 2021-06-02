@@ -8,17 +8,18 @@ const Create = () => {
 
     const handleSubmit =  async (ev) => {
         ev.preventDefault();
-        console.log('title, description ', title, description);
+        console.log( title, description);
 
         const response = await fetch('https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/posts', {
                                              method: 'POST',
                                              headers: {
                                                 'Content-Type': 'application/json',
-                                                'Authorization': 'Bearer'+{token}
+                                                'Authorization': 'Bearer'
                                             },
                                              body: JSON.stringify({
-                                               post: {title: 'Viral & Gio Project',
-                                                    description: 'Awesome'   
+                                               post: {
+                                                    title,
+                                                    description   
                                              }                     
                                                     })   
                                             })

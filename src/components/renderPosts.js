@@ -13,10 +13,12 @@ const RenderPosts = () => {
             setPosts(res)
         }
         fetchPost ();
-
+console.log(posts)
     }, [])
     return (
-        <div>Hi</div>)
+        <div>
+
+        </div>)
      
     
     
