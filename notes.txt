@@ -16,3 +16,24 @@ test notes
                 </ul>  
             </nav> 
         </header>
+
+         const [token, setToken] = useState()
+
+    function logUser () {fetch('https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/users/login', {
+        method: "POST",
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+        user: {
+        username: 'twentblksbvkjsyvlbvldfnvlghkudfh',
+        password: 'dollar'
+        }
+        })
+    }).then(response => response.json())
+    .then(result => {
+    console.log(result.data.token);
+    setToken(result.data.token)
+    })
+    .catch(console.error);
+    }

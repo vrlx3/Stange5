@@ -9,7 +9,7 @@ const Create = () => {
 
 
     const token = 'Bearer ' + localStorage.getItem("token")
-    console.log('token is ', token)
+    // console.log('token is ', token)
 
     const handleSubmit =  async (ev) => {
         ev.preventDefault();

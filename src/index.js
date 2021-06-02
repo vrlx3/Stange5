@@ -17,28 +17,7 @@ const BASE = 'https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/'
 
 const App = () => {
 
-    
-    const [token, setToken] = useState()
-
-    function logUser () {fetch('https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/users/login', {
-        method: "POST",
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-        user: {
-        username: 'twentblksbvkjsyvlbvldfnvlghkudfh',
-        password: 'dollar'
-        }
-        })
-    }).then(response => response.json())
-    .then(result => {
-    console.log(result.data.token);
-    setToken(result.data.token)
-    })
-    .catch(console.error);
-    }
-    
+       
 
     return (
     <div id='app'>
@@ -47,8 +26,7 @@ const App = () => {
     
         <div id='page'>
             <h1>new world</h1>
-            <button onClick={logUser}>login</button>
-            <h2>This is the new world</h2>
+           
         </div>
 
         <Reguser/>
