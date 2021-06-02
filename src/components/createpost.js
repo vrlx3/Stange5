@@ -3,8 +3,13 @@ import Reguser from './reguser'
 
 
 const Create = () => {
-    const [title, setTitle] = useState([])
-    const [description, setDescription] = useState([])
+    const [title, setTitle] = useState('')
+    const [description, setDescription] = useState('')
+    const [price, setPrice] = useState('')
+
+
+    const token = 'Bearer ' + localStorage.getItem("token")
+    console.log('token is ', token)
 
     const handleSubmit =  async (ev) => {
         ev.preventDefault();
@@ -14,12 +19,14 @@ const Create = () => {
                                              method: 'POST',
                                              headers: {
                                                 'Content-Type': 'application/json',
-                                                'Authorization': 'Bearer'
+                                                'Authorization': token
                                             },
                                              body: JSON.stringify({
                                                post: {
                                                     title,
-                                                    description   
+                                                    description,
+                                                    price,
+                                                       
                                              }                     
                                                     })   
                                             })
@@ -28,6 +35,7 @@ const Create = () => {
         // setPosts([data,...posts])
         setTitle('')
         setDescription('')
+        setPrice('')
     
     }
 
@@ -45,6 +53,12 @@ const Create = () => {
                     placeholder="Description"
                     value={description}
                     onChange={(ev) => setDescription(ev.target.value)}
+                    />
+                <input
+                    type="text"
+                    placeholder="Price"
+                    value={price}
+                    onChange={(ev) => setPrice(ev.target.value)}
                     />
                 <button type="submit">Create</button>
             </form>

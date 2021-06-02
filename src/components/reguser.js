@@ -5,7 +5,7 @@ const Reguser = () => {
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
-    const [token, setToken] = useState('')
+    // const [token, setToken] = useState('')
 
     const handleSubmit = () =>{
 
@@ -28,11 +28,11 @@ const Reguser = () => {
         }).then(response => response.json())
           .then(result => {
             console.log(result.data.token);
-            setToken(result.data.token)
-            localStorage.setItem("token", token)
+            // setToken(result.data.token)
+            localStorage.setItem("token", result.data.token)
           })
           .catch(console.error);
-          console.log(token)
+          // console.log(token)
                       
       }}>
             <input id='username' type='text' placeholder='Choose Username' value={username} onChange={ (e) => {setUsername(e.target.value)}}></input>
