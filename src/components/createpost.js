@@ -8,7 +8,7 @@ const Create = () => {
         ev.preventDefault();
         console.log('title, description ', title, description);
 
-        const response = await fetch(curl, {
+        const response = await fetch('https://strangers-things.herokuapp.com/api/COHORT-NAME/users/register', {
                                              method: 'POST',
                                              header: {
                                                         'Content-Type': 'application/json',
