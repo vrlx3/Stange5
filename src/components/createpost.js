@@ -1,10 +1,6 @@
 import React, {useState} from 'react';
-<<<<<<< HEAD
-// import {token} from './reguser'
 import Reguser from './reguser'
-=======
 
->>>>>>> 06a3d4076ecb932ada852f265241870516ab4132
 
 const Create = () => {
     const [title, setTitle] = useState([])

@@ -5,62 +5,36 @@ const Reguser = () => {
 
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const [token, setToken] = useState('')
 
-    return (<div id='reguser'>
-            <form onSubmit={async  (ev) => {
-                //send fetch post with vars username and password to url.../register
+    const handleSubmit = () =>{async  (ev) => {
+        ev.preventDefault();
+        fetch('https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/users/register', {
+          method: "POST",
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            user: {
+              username,
+              password
+              }
+          })
+        }).then(response => response.json())
+          .then(result => {
+            console.log(result.data.token);
+            setToken(result.data.token)
+            localStorage.setItem("token", token)
+          })
+          .catch(console.error);
+          console.log(token)
+                      
+      }
 
-                // save token received in somewhere // local Storage
-                // 
-                ev.preventDefault();
-                fetch('https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/users/register', {
-                    method: "POST",
-                    headers: {
-                      'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                      user: {
-                        username,
-                        password
-                        }
-                    })
-                  }).then(response => response.json())
-                   
-                    .then(result => {
-<<<<<<< HEAD
-                    console.log(result.data.token);
-                    setToken(result.data.token)
-                    })
-                    
-                    .catch(console.error);
+    }
 
-                
-                    console.log(token)
-
-=======
-                        
-                      console.log(result);
-                      const token = result.data.token;
-                      console.log(token)
-                      localStorage.setItem("token", token)
-                    })
-                    
-                    .catch(console.error);
-                
-
-                   
-                    // .then(return result)
-                    // const token = response.data.token;
-<<<<<<< HEAD
-                    // localStorage.setItem(“token”, token)
->>>>>>> 06a3d4076ecb932ada852f265241870516ab4132
-=======
-                    
->>>>>>> 07bed1752d66922b68061ddefc5adb968edeb8d2
-                    // console.log('user/pass ', username, password)
-                    // console.log(response.data.token)
-                
-            }}>
+    return <div id='reguser'>
+            <form onSubmit={handleSubmit()}>
             <input id='username' type='text' placeholder='Choose Username' value={username} onChange={ (e) => {setUsername(e.target.value)}}></input>
             <p></p>
             <input id='password' type='text' placeholder='Choose Password' value={password} onChange={ (e) => {setPassword(e.target.value)}}></input>
@@ -68,16 +42,10 @@ const Reguser = () => {
             <button type='submit' >Register</button>
             </form>
             </div>
-            
-    )
-
+          
+    
 }
+    
+
 
 export default Reguser;
-<<<<<<< HEAD
-
-
-
-
-=======
->>>>>>> 06a3d4076ecb932ada852f265241870516ab4132
