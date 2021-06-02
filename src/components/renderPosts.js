@@ -6,7 +6,6 @@ const url =  'https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/post
 
 const RenderPosts = () => {
    const [posts, setPosts] = useState([]);
-   const [allposts, setAllposts] = useState([])
    console.log(posts)
 
    useState( () => {
