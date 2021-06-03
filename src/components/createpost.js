@@ -16,20 +16,20 @@ const Create = () => {
         console.log( title, description);
 
         const response = await fetch('https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/posts', {
-                                             method: 'POST',
-                                             headers: {
-                                                'Content-Type': 'application/json',
-                                                'Authorization': token
-                                            },
-                                             body: JSON.stringify({
-                                               post: {
-                                                    title,
-                                                    description,
-                                                    price,
+                                method: 'POST',
+                                headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': token
+                                },
+                                body: JSON.stringify({
+                                post: {
+                                title,
+                                description,
+                                price,
                                                        
-                                             }                     
-                                                    })   
-                                            })
+                             }                     
+                         })   
+                     })
         const data = await response.json();
         console.log('data ', data);
         // setPosts([data,...posts])
