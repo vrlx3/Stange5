@@ -60,8 +60,10 @@ const Create = () => {
                     value={price}
                     onChange={(ev) => setPrice(ev.target.value)}
                     />
+                    
                 <button type="submit">Create</button>
             </form>
+            
             </>
 
 }

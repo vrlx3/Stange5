@@ -6,12 +6,12 @@ const EditPost = () =>
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
     const [price, setPrice] = useState('')
-    const [postId,setPostId] = usestate('')
+    const [postId,setPostId] = useState('')
 
 
     const token = 'Bearer ' + localStorage.getItem("token")
 
-    const handleSubmit =  async (ev) => {
+    const handleSubmit =  async (ev, prop) => {
         ev.preventDefault();
         setPostId(prop.key)
 
@@ -29,19 +29,43 @@ const EditPost = () =>
              
               }
             })
-          }).then(response => response.json())
-            .then(result => {
-              console.log(result);
-            })
-            .catch(console.error);
+          })
+          
+          const data = await response.json();
+          console.log('data', data)
+          if (data && data.title)
+          {
+              const newPost = posts.map(post => {
+                  if (post.id === postID) {
+                      return data;
+                  }
+                  else {
+                      return post
+                  }
+              })
+
+          }
+          setPosts(newPosts);
+          setTitle('');
+          setDescrption('');
+          setPrice('');
+          setPostId('')
+
+        //   .then(response => response.json())
+        //     .then(result => {
+        //       console.log(result);
+        //     })
+        //     .catch(console.error);
 
     }
     return <>
-    <form onSubmit={handleSubmit}> 
     
-    <button type="submit">Edit Post</button>
-    </form>
+    
+    <button onClick={handleSubmit}>Edit Post</button>
+    
 
 
 </>
 }
+
+export default EditPost;

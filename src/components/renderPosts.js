@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react'
+import EditPost from './editpost'
 
 
 const url =  'https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/posts'
@@ -32,6 +33,8 @@ const RenderPosts = () => {
             <p id='post_location'>Location: {post.location}</p>
             <p id='post_deliver'>{post.willDeliver ? 'Delivery Included' : 'Pickup Only'}</p>
             <p id='post_user'>Posted By: {post.author.username}</p>
+
+            <EditPost  key={post._id}/>
             <hr></hr>
             
             
