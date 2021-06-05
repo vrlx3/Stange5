@@ -3,24 +3,25 @@ import React, {useState} from 'react';
 import Reguser from './reguser'
 
 
-const DeletePost = (prop) => {
+const DeletePost = (key) => {
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
     const [price, setPrice] = useState('')
-
+  
+    console.log(key)
 
     const token = 'Bearer ' + localStorage.getItem("token")
     // console.log('token is ', token)
     
 
-    const handleSubmit = async (e) => {
+    const handleSubmit = async () => {
     //    const delkey = ev.postdisc.parentElement.id
        
         
        
         // ev.preventDefault();
          try {
-            const response = await fetch( `https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/posts/${name}`, { 
+            const response = await fetch( `https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/posts/${key}`, { 
                 method: "DELETE",
                 headers: {
                      'Content-Type': 'application/json',
