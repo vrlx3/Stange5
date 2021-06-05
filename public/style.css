@@ -1,16 +1,9 @@
-h1 {
-    color:red;
-}
 
-/* .nav_links{
+.nav_links{
     list-style: none;
     background-color: black;
 }
-.nav_links > li {
-    display: inline-block;
-    padding: 0px 20px;
-    background-color: black;
-}
+
 
 header {
     display:flex;
@@ -20,10 +13,8 @@ header {
     background-color: black;
     position: fixed;
     width: 100%;
-    color: yellow; */
-/* } */
-
-
+    color: yellow; 
+}
 
 #header {
     display: flex;
@@ -38,22 +29,23 @@ header {
 #navbar {
     display: flex;
     flex-direction: row;
-    color:white;
+    
     justify-content: space-between;
     align-items: center;
     justify-items: center;
 }
 
-#navbar > div {
+#navbar > a {
     padding-right: 30px;
+    color:white;
 }
 
 #page {
     display:flex;
     align-items: center;
     padding: 90px;
-    /* font-family: 'Montserrat', sans-serif; */
-    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    justify-content: center; 
     min-width:1000px;
     padding-top: 200px;
-}
+}  

@@ -35,7 +35,7 @@ const LogUser = () =>
     }
 
     return <>
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='loginuser'>
         <input 
             type="text"
             placeholder="Enter Username"
