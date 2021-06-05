@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import Reguser from './reguser'
 
 
-const DeletePost = ({name}) => {
+const DeletePost = () => {
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
     const [price, setPrice] = useState('')
@@ -11,18 +11,19 @@ const DeletePost = ({name}) => {
     
   
     
-    console.log('postid ', postid)
+   
 
     const token = 'Bearer ' + localStorage.getItem("token")
        
 
-    const handleSubmit = async (name) => {
+    const handleSubmit = async (postid) => {
     //    const delkey = ev.postdisc.parentElement.id
-       
+    
         
-       
+    console.log('postid ', postid)
         // ev.preventDefault();
          try {
+            
             const response = await fetch( `https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/posts/${postid}`, { 
                 method: "DELETE",
                 headers: {
@@ -31,7 +32,7 @@ const DeletePost = ({name}) => {
                   }
              })
             const result = await response.json();
-            console.log(result);
+            console.log('result', result);
          } catch (error) {
              console.error(error); (edited) 
          }
