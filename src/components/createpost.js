@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Reguser from './reguser'
 
 
-const Create = ({posts, setPosts}) => {
+const Create = () => {
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
     const [price, setPrice] = useState('')
