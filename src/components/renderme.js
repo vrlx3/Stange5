@@ -1,19 +1,25 @@
 import React, { useState } from 'react'
-import ReactDOM from 'react'
-import EditPost from './editpost'
-import Delete from './delete'
+import {EditPost, DeletePost} from './index'
 
 
-const url =  'https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/posts'
 
-const RenderPosts = () => {
+const url =  'https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/users/me'
+
+const RenderMe = () => {
    const [posts, setPosts] = useState([]);
    console.log(posts)
+   const token = 'Bearer ' + localStorage.getItem("token")
 
    useState( () => {
         const fetchPost = async () => {
-            const response = await fetch(url);
+            const response = await fetch(url, {
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': token
+                },
+            });
             const res = await response.json();
+            await console.log(res.data.posts)
            
             setPosts(res.data.posts);
         }
@@ -21,9 +27,9 @@ const RenderPosts = () => {
   
    }, [])
 
-   return (
-    <div id='allPosts'>
-        <h1>All Posts</h1>
+   return <>
+    <div id='mypost'>
+        <h1>My Posts</h1>
         {
             posts.map(post => <div key={post._id} id={post._id}> 
                         
@@ -36,7 +42,7 @@ const RenderPosts = () => {
             <p id='post_user'>Posted By: {post.author.username}</p>
 
             <EditPost  postId={post._id} className='editpost'/>
-            <Delete delkey={post._id}/>
+            <DeletePost name={post._id}/>
             <hr></hr>
             
             
@@ -44,9 +50,9 @@ const RenderPosts = () => {
         }
         
     </div>
-   )
+   </>
     
     
 }
 
-export default RenderPosts;
+export default RenderMe;

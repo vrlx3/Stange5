@@ -7,6 +7,8 @@ const Create = () => {
     const [description, setDescription] = useState('')
     const [price, setPrice] = useState('')
 
+  
+
 
     const token = 'Bearer ' + localStorage.getItem("token")
     // console.log('token is ', token)
@@ -14,6 +16,8 @@ const Create = () => {
     const handleSubmit =  async (ev) => {
         ev.preventDefault();
         console.log( title, description);
+        const {postsdisc} = ev;
+        const [ title, description, price] = postsdisc;
 
         const response = await fetch('https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/posts', {
                                 method: 'POST',
