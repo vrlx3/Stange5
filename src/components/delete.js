@@ -39,7 +39,7 @@ const DeletePost = (props) => {
             // }
         }
 
-    return <button id='delbutton' onClick={handleSubmit} delkey={123}>Delete 2</button>
+    return <button id='delbutton' onClick={handleSubmit} >Delete 2</button>
           
         
 }

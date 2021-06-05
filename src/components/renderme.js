@@ -1,27 +1,14 @@
 import React, { useState } from 'react'
 import {EditPost, DeletePost} from './index'
-import axios from 'axios'
-
-
-
-
 
 const url =  'https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/users/me'
 
 
 
-const RenderMe = (props) => {
+const RenderMe = () => {
    const [posts, setPosts] = useState([]);
    
    const token = 'Bearer ' + localStorage.getItem("token")
-
-   let deletePost = async function({_id}){
-    await axios.delete(`https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/posts/${_id}`, {
-        headers: {
-            Authorization: token
-        }
-    })
-}
 
    useState( () => {
         const fetchPost = async () => {
@@ -44,7 +31,7 @@ const RenderMe = (props) => {
     <div id='mypost'>
         <h1>My Posts</h1>
         {
-            posts.map(post => <div key={post._id} > 
+            posts.map(post => <div key={post._id} id={post._id} > 
                         
             <h3 id='post_title'>{post.title}</h3>
             {/* <i>Description</i> */}
@@ -53,14 +40,11 @@ const RenderMe = (props) => {
             <p id='post_location'>Location: {post.location}</p>
             <p id='post_deliver'>{post.willDeliver ? 'Delivery Included' : 'Pickup Only'}</p>
             <p id='post_user'>Posted By: {post.author.username}</p>
-
             <EditPost  className='editpost'/>
-            <button onClick={()=>{deletePost(post._id)}}>delete post</button>
             <DeletePost/> 
             <hr></hr>
-            
-            
-            </div>)
+            </div>
+            )
         }
         
     </div>
