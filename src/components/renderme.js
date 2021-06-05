@@ -5,7 +5,7 @@ import {EditPost, DeletePost} from './index'
 
 const url =  'https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/users/me'
 
-const RenderMe = () => {
+const RenderMe = (props) => {
    const [posts, setPosts] = useState([]);
    
    const token = 'Bearer ' + localStorage.getItem("token")
@@ -42,7 +42,7 @@ const RenderMe = () => {
             <p id='post_user'>Posted By: {post.author.username}</p>
 
             <EditPost  className='editpost'/>
-            <DeletePost id={post._id} delkey={post._id}/>
+            <DeletePost  />
             <hr></hr>
             
             
