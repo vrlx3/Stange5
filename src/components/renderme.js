@@ -7,7 +7,7 @@ const url =  'https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/user
 
 const RenderMe = () => {
    const [posts, setPosts] = useState([]);
-   console.log(posts)
+   
    const token = 'Bearer ' + localStorage.getItem("token")
 
    useState( () => {
@@ -41,8 +41,8 @@ const RenderMe = () => {
             <p id='post_deliver'>{post.willDeliver ? 'Delivery Included' : 'Pickup Only'}</p>
             <p id='post_user'>Posted By: {post.author.username}</p>
 
-            <EditPost  postId={post._id} className='editpost'/>
-            <DeletePost name={post._id}/>
+            <EditPost  className='editpost'/>
+            <DeletePost id={post._id} delkey={post._id}/>
             <hr></hr>
             
             

@@ -42,7 +42,11 @@ const DeletePost = ({name}) => {
                 <button 
            
 
-                onClick={ (event) => handleSubmit()}
+                onClick={   
+                 
+                    handleSubmit
+                
+                }
                 
                 >Delete</button> 
             </>
