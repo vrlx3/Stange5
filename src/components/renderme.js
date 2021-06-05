@@ -1,14 +1,27 @@
 import React, { useState } from 'react'
 import {EditPost, DeletePost} from './index'
+import axios from 'axios'
+
+
 
 
 
 const url =  'https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/users/me'
 
+
+
 const RenderMe = (props) => {
    const [posts, setPosts] = useState([]);
    
    const token = 'Bearer ' + localStorage.getItem("token")
+
+   let deletePost = async function({_id}){
+    await axios.delete(`https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/posts/${_id}`, {
+        headers: {
+            Authorization: token
+        }
+    })
+}
 
    useState( () => {
         const fetchPost = async () => {
@@ -42,7 +55,8 @@ const RenderMe = (props) => {
             <p id='post_user'>Posted By: {post.author.username}</p>
 
             <EditPost  className='editpost'/>
-            <DeletePost  />
+            <button onClick={()=>{deletePost(post._id)}}>delete post</button>
+            <DeletePost/> 
             <hr></hr>
             
             
