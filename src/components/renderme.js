@@ -31,7 +31,7 @@ const RenderMe = () => {
     <div id='mypost'>
         <h1>My Posts</h1>
         {
-            posts.map(post => <div key={post._id} id={post._id}> 
+            posts.map(post => <div key={post._id} > 
                         
             <h3 id='post_title'>{post.title}</h3>
             {/* <i>Description</i> */}
