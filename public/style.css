@@ -5,16 +5,7 @@
 }
 
 
-header {
-    display:flex;
-    justify-content:space-between;
-    align-items: center;
-    padding: 30px 10%;
-    background-color: black;
-    position: fixed;
-    width: 100%;
-    color: yellow; 
-}
+
 
 #header {
     display: flex;
@@ -39,6 +30,11 @@ header {
     padding-right: 30px;
     color:white;
 }
+#navbar > form > button {
+    background-color:white;
+    border-radius: 20px;
+}
+
 
 #page {
     display:flex;
@@ -46,6 +42,31 @@ header {
     padding: 90px;
     font-family: 'Montserrat', sans-serif;
     justify-content: center; 
-    min-width:1000px;
+    align-content: center;
     padding-top: 200px;
+    font-size: 70px;
 }  
+
+#reguser {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#reguser >form> button {
+    background-color: white;
+    border-radius: 20px;
+    color: black;
+}
+#reguser > form {
+    background-color: teal;
+    padding: 90px 20px;
+    border-radius: 50px;
+    border: black solid 3px;
+}
+form >button{
+    border-radius: 20px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
