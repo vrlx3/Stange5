@@ -42,13 +42,14 @@ const LogUser = () =>
             value={username}
             onChange={(ev) => setUsername(ev.target.value)}            
             />
+            <p></p>
         <input
             type="text"
             placeholder="Enter Password"
             value={password}
             onChange={(ev) => setPassword(ev.target.value)}
             />
-       
+       <p></p>
         <button type="submit">Login</button>
     </form>
     </>
