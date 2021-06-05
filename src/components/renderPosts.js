@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import ReactDOM from 'react'
 import EditPost from './editpost'
+import Delete from './delete'
 
 
 const url =  'https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/posts'
@@ -35,6 +36,7 @@ const RenderPosts = () => {
             <p id='post_user'>Posted By: {post.author.username}</p>
 
             <EditPost  key={post._id}/>
+            <Delete />
             <hr></hr>
             
             

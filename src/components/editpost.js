@@ -6,14 +6,15 @@ const EditPost = () =>
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
     const [price, setPrice] = useState('')
-    const [postId,setPostId] = useState('')
+    // const [postId,setPostId] = useState('')
 
 
     const token = 'Bearer ' + localStorage.getItem("token")
 
-    const handleSubmit =  async (ev, prop) => {
-        ev.preventDefault();
-        setPostId(prop.key)
+    const handleSubmit =  async (prop) => {
+        const {postId} = prop;
+        console.log('postid ', postId)
+        // setPostId(prop.key)
 
         fetch(`http://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/posts/${postId}`, {
             method: "PATCH",
