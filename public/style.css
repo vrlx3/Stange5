@@ -63,10 +63,19 @@
     border-radius: 50px;
     border: black solid 3px;
 }
-form >button{
+form.loginuser >button{
     border-radius: 20px;
     display: flex;
-    align-content: center;
-    justify-content: center;
+   
+}
+form.loginuser{
+    display: flex;
     align-items: center;
+    flex-direction: column;
+    background-color: teal;
+    padding: 60px 20px;
+    border-radius: 50px;
+    border: black solid 3px;
+    max-width: 150px;
+    
 }
