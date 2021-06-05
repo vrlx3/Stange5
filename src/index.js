@@ -1,8 +1,8 @@
 import axios from 'axios'
 import React, { useState } from 'react'
 import ReactDOM from 'react-dom'
-import {Header, Reguser, RenderPosts, Create, LogUser, LogOutUser,DeletePost,RenderMe} from './components'
-import {BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import {Header, Reguser, RenderPosts, LogUser, LogOutUser,DeletePost,RenderMe} from './components'
+import {BrowserRouter as Router, Route,} from 'react-router-dom'
 
 
 
@@ -44,10 +44,10 @@ const App = () => {
         {/* <Router path ='/puppies' render={()=> < Puppies />} />  */}
         <Route path ='/login' component={LogUser}/>
      
-        <Create/>
+        
         <Route path ='/myposts' component={RenderMe}/>
-        <RenderPosts/>
-        <LogOutUser/>
+        <Route path='/allPosts' component={RenderPosts}/>
+        
         <p></p>
         
     </div>

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import ReactDOM from 'react'
 import EditPost from './editpost'
 import Delete from './delete'
+import Create from './createpost'
 
 
 const url =  'https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/posts'
@@ -24,6 +25,7 @@ const RenderPosts = () => {
    return (
     <div id='allPosts'>
         <h1>All Posts</h1>
+        <Create/>
         {
             posts.map(post => <div key={post._id} id={post._id}> 
                         
