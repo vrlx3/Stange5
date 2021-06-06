@@ -1,8 +1,6 @@
 import React, {useState} from 'react'
 
-function confirmlogin(){
-  window.location.reload();
-} 
+
 
 const LogUser = () => 
 {
@@ -33,7 +31,7 @@ const LogUser = () =>
             })
             
             .catch(console.error);
-            alert('Thank You for Logging In! Please Confirm Login')
+            alert('Thank You for Logging In! Please Checkout The Posts!')
             
         
         setUsername('')
@@ -61,7 +59,6 @@ const LogUser = () =>
             />
         <p></p>
         <button type="submit"    >Login</button>
-        <button type="submit" onClick={confirmlogin}>Confirm Login</button>
         
     </form>
     </div>

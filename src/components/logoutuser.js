@@ -7,6 +7,8 @@ const LogOutUser = () =>
         ev.preventDefault();
         localStorage.setItem("token", '')
     }
+  
+   
     return <>
     <form onSubmit={handleSubmit}>
     
