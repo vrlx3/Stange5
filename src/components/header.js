@@ -14,10 +14,10 @@ const Header = () => {
             
             {/* <Link to='/login'>Login</Link>
                 
-            <Link to='/registration'>Register</Link> */}
+            <Link to='/registration'>Register</Link> 
             
             
-            {/* <Link to='/myposts'>My Posts</Link> */}
+            <Link to='/myposts'>My Posts</Link> */}
             <Myren/>
             
             <Link to='/allPosts'>All Posts</Link>

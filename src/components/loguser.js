@@ -31,11 +31,11 @@ const LogUser = () =>
         
         setUsername('')
         setPassword('')
-    
+            location.assign('./myposts')
     }
 
     return <>
-    <form onSubmit={handleSubmit} className='loginuser'>
+    <form id='logform' onSubmit={handleSubmit} className='loginuser'>
         <input 
             type="text"
             placeholder="Enter Username"
