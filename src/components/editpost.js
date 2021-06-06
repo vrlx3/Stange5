@@ -12,11 +12,11 @@ const EditPost = () =>
     const token = 'Bearer ' + localStorage.getItem("token")
 
     const handleSubmit =  async (prop) => {
-        const {postId} = prop;
-        console.log('postid ', postId)
-        // setPostId(prop.key)
+        // const target = 
+        // console.log('postid ', postId)
+        // // setPostId(prop.key)
 
-        fetch(`http://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/posts/${postId}`, {
+        fetch(`http://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/posts/${target}`, {
             method: "PATCH",
             headers: {
               'Content-Type': 'application/json',

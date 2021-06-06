@@ -83,7 +83,7 @@ const RenderPosts = () => {
             <p id='post_deliver'>{post.willDeliver ? 'Delivery Included' : 'Pickup Only'}</p>
             <p id='post_user'>Posted By: {post.author.username}</p>
 
-            <EditPost  postId={post._id} className='editpost'/>
+            {/* <EditPost  postId={post._id} className='editpost'/> */}
             {/* <Delete delkey={post._id}/> */}
             {post.isAuthor ? <button  onClick={(ev) => delthispost(post._id)}>Delete</button> : null}
             <hr></hr>

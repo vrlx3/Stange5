@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.21.1",
+    "build": "^0.1.4",
     "chalk": "^4.1.1",
     "nodemon": "^2.0.7",
     "react": "^17.0.2",
