@@ -48,6 +48,7 @@ const RenderPosts = () => {
    return (
     <div id='allPosts'>
         <h1>All Posts</h1>
+       
         <Create/>
         {
             posts.map(post => <div key={post._id} id={post._id}> 
