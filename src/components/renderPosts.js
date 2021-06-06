@@ -10,10 +10,17 @@ const url =  'https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/post
 const RenderPosts = () => {
    const [posts, setPosts] = useState([]);
    console.log(posts)
+   const token = 'Bearer ' + localStorage.getItem("token")
 
    useState( () => {
         const fetchPost = async () => {
-            const response = await fetch(url);
+            const response = await fetch(url, 
+                {
+                    method: 'GET',
+                    headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': token
+                    }});
             const res = await response.json();
            
             setPosts(res.data.posts);
@@ -21,6 +28,22 @@ const RenderPosts = () => {
         fetchPost ();
   
    }, [])
+
+    async function delthispost  (target)  {
+     console.log(target)
+
+    const response = await fetch(`https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/posts/${target}`, { 
+                method: "DELETE",
+                headers: {
+                     'Content-Type': 'application/json',
+                     'Authorization': token
+                  }
+             });
+            const result = await response.json();
+            console.log('result', result);
+
+
+   }
 
    return (
     <div id='allPosts'>
@@ -38,7 +61,8 @@ const RenderPosts = () => {
             <p id='post_user'>Posted By: {post.author.username}</p>
 
             <EditPost  postId={post._id} className='editpost'/>
-            <Delete delkey={post._id}/>
+            {/* <Delete delkey={post._id}/> */}
+            {post.isAuthor ? <button  onClick={delthispost(post._id)}>Delete 3</button> : null}
             <hr></hr>
             
             
