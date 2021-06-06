@@ -21,6 +21,8 @@ const Header = () => {
             <Myren/>
             
             <Link to='/allPosts'>All Posts</Link>
+            
+            
             <LogOutUser/>
 
                

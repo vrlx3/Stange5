@@ -10,7 +10,12 @@ const url =  'https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/post
 
 const RenderPosts = () => {
    const [posts, setPosts] = useState([]);
-   console.log(posts)
+
+   const [searchText, setSearchText] = useState('')
+
+   console.log('searchtop ', searchText)
+
+//    console.log(posts)
    const token = 'Bearer ' + localStorage.getItem("token")
 
    useState( () => {
@@ -49,24 +54,28 @@ const RenderPosts = () => {
 
            
             };
-            const Search = async (event) => {
-                event.preventDefault();
-                const searchText = event.target[0].value.toLowerCase();
-                RenderPosts().then((result) => {
-                    const filteredPosts = result.filter( (post) => {
-                        return post.title.toLowerCase().includes(`${searchText}`) || post.description.toLowerCase().includes(`${searchText}`)
-                    });
-                    setPosts(filteredPosts);
-                });
+    const Search = async function (searchText) {
+        // event.preventDefault();
+        // const searchText = event.target[0].value.toLowerCase();
+
+        console.log('search ', searchText)
+
+
+        // RenderPosts().then((result) => {
+        //     const filteredPosts = result.filter( (post) => {
+        //         return post.title.toLowerCase().includes(`${searchText}`) || post.description.toLowerCase().includes(`${searchText}`)
+        //     });
+        //     setPosts(filteredPosts);
+        // });
    }
 
    return (
     <div id='allPosts'>
-            <form id="searchbar" onSubmit={Search}>
-                <label htmlFor="searchterm">Search: </label>
-                <input name="searchterm" type="text" placeholder="search"/>
-                <button type="submit" >Submit</button>
-            </form>
+            <div id="searchbar" onSubmit={Search}>
+                {/* <label htmlFor="searchterm">Search: </label> */}
+                <input onChange={(ev) => setSearchText(ev.target.value)} type="text" placeholder="Search"/>
+                <button onClick={(ev) => Search}>Submit</button>
+            </div>
         <Create/>
 
         <h1>All Posts</h1>
