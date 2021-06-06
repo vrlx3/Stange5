@@ -46,8 +46,8 @@ const CreateMe = () => {
     }
 
     return <>
-            <h3>Create a Post</h3>
-            <form onSubmit={handleSubmit}>
+            <h3 id= 'makepost'>Create a Post</h3>
+            <form id= 'postmake'onSubmit={handleSubmit}>
                 <input 
                     type="text"
                     placeholder="Title"
