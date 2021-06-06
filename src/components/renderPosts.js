@@ -29,7 +29,7 @@ const RenderPosts = () => {
   
    }, [])
 
-    async function delthispost  (target)  {
+    const delthispost = async function(target)  {
      console.log(target)
 
         const response = await fetch(`https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/posts/${target}`, { 
@@ -63,7 +63,7 @@ const RenderPosts = () => {
 
             <EditPost  postId={post._id} className='editpost'/>
             {/* <Delete delkey={post._id}/> */}
-            {post.isAuthor ? <button  onClick={delthispost(post._id)}>Delete 3</button> : null}
+            {post.isAuthor ? <button  onClick={(ev) => delthispost(post._id)}>Delete 3</button> : null}
             <hr></hr>
             
             
