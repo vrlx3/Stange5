@@ -5,6 +5,7 @@ import Delete from './delete'
 import Create from './createpost'
 
 
+
 const url =  'https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/posts'
 
 const RenderPosts = () => {
@@ -44,10 +45,28 @@ const RenderPosts = () => {
 
             location.assign("/allposts")
 
+
+
+           
+            };
+            const Search = async (event) => {
+                event.preventDefault();
+                const searchText = event.target[0].value.toLowerCase();
+                RenderPosts().then((result) => {
+                    const filteredPosts = result.filter( (post) => {
+                        return post.title.toLowerCase().includes(`${searchText}`) || post.description.toLowerCase().includes(`${searchText}`)
+                    });
+                    setPosts(filteredPosts);
+                });
    }
 
    return (
     <div id='allPosts'>
+            <form id="searchbar" onSubmit={Search}>
+                <label htmlFor="searchterm">Search: </label>
+                <input name="searchterm" type="text" placeholder="search"/>
+                <button type="submit" >Submit</button>
+            </form>
         <Create/>
 
         <h1>All Posts</h1>
