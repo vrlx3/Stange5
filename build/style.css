@@ -1,0 +1,128 @@
+
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+.nav_links{
+    list-style: none;
+    background-color: black;
+}
+
+
+body{
+    background-color:black;
+}
+
+#header {
+    display: flex;
+    padding: 30px 10%;
+    background-color: teal;
+    position:fixed;
+    width: 100%;
+   justify-items: center;
+   align-items: center;
+   flex-wrap: wrap;
+   
+}
+
+#navbar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    justify-items: center;
+    
+}
+
+#navbar > a {
+    padding-right: 30px;
+    color:white;
+}
+#navbar > form > button {
+    background-color:white;
+    border-radius: 20px;
+}
+
+
+#page {
+    display:flex;
+    padding: 90px;
+    font-family: 'Montserrat', sans-serif;
+    justify-content: center; 
+    padding-top: 200px;
+    font-size: 70px;
+
+}  
+
+#reguser {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#reguser >form> button {
+    background-color: white;
+    border-radius: 20px;
+    color: black;
+}
+#reguser > form {
+    background-color: teal;
+    padding: 90px 20px;
+    border-radius: 50px;
+    border: white solid 3px;
+}
+
+#logform {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#logform >form> button {
+    background-color: white;
+    border-radius: 20px;
+    color: black;
+}
+#logform > form {
+    background-color: teal;
+    padding: 90px 20px;
+    border-radius: 50px;
+    border: white solid 3px;
+}
+
+
+#makepost {
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: teal;
+    border: white solid 5px;
+    color: white;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+}
+#postmake{
+    background-color: teal;
+    display: flex;
+    justify-content: center;
+    
+    margin: 5px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+h1{
+    background-color: teal;
+    color: white;
+    display: flex;
+    justify-content: center;
+    border: white solid 5px;
+}
+div{
+    color:white;
+}
+h3{
+    display: flex;
+    justify-content: center;
+}
+
+#searchbar {
+    padding-left: 5px;
+}

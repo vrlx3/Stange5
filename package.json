@@ -6,7 +6,9 @@
   "main": "index.js",
   "scripts": {
     "start-nodemon": "nodemon",
-    "start": "react-scripts start"
+    "start": "react-scripts start",
+    "start:dev": "react-scripts start",
+    "client:build": "react-scripts build"
   },
   "keywords": [],
   "author": "",
