@@ -32,7 +32,7 @@ const App = () => {
             
             
            
-            <div>Welcome to Stranger Things</div>
+            <div>Welcome to Stranger's Things</div>
             {/* <Link to='/posts'>Register</Link> */}
             
        
