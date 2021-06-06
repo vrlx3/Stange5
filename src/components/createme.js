@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import Reguser from './reguser'
 
 
-const Create = () => {
+const CreateMe = () => {
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
     const [price, setPrice] = useState('')
@@ -42,7 +42,7 @@ const Create = () => {
                      
       console.log(location.pathname)
 
-        location.assign("/allPosts")
+        location.assign("/myposts")
     }
 
     return <>
@@ -74,4 +74,4 @@ const Create = () => {
 
 }
 
-export default Create;
+export default CreateMe;

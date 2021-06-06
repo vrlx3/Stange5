@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {EditPost, DeletePost} from './index'
+import {EditPost, DeletePost, CreateMe} from './index'
 
 const url =  'https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/users/me'
 
@@ -28,6 +28,7 @@ const RenderMe = () => {
    }, [])
 
    return <>
+    <CreateMe />
     <div id='mypost'>
         <h1>My Posts</h1>
         {
