@@ -1,10 +1,15 @@
 import {BrowserRouter as Router, Route, Link } from 'react-router-dom';
+import React,{useState} from 'react'
+
 
 
 const Myren = () => {
-    const loggedin = localStorage.getItem("token")
-    console.log('logged in ', loggedin)
-    if (!!loggedin) {
+   
+    const userState = localStorage.getItem("token")
+
+    console.log('logged in ', userState)
+
+    if (userState) {
         return <Link to='/myposts'>My Posts</Link>
     } else {
         return <>
