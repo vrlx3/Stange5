@@ -1,11 +1,15 @@
 import React, {useState} from 'react'
 
+function confirmlogin(){
+  window.location.reload();
+} 
 
 const LogUser = () => 
 {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
+    
 
     const handleSubmit =async (ev) => 
     {
@@ -28,11 +32,15 @@ const LogUser = () =>
               localStorage.setItem("token", result.data.token)
             })
             .catch(console.error);
+            alert('Thank You for Logging In! Please Confirm Login')
+            
         
         setUsername('')
         setPassword('')
+       
       
     }
+    
 
     return <>
     <div id='logform'>
@@ -51,10 +59,14 @@ const LogUser = () =>
             onChange={(ev) => setPassword(ev.target.value)}
             />
         <p></p>
-        <button type="submit">Login</button>
+        <button type="submit"    >Login</button>
+        <button type="submit" onClick={confirmlogin}>Confirm Login</button>
+        
     </form>
     </div>
     </>
+
+
 }
 
 

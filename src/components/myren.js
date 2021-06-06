@@ -9,9 +9,9 @@ const Myren = () => {
 
     console.log('logged in ', userState)
 
-    if (userState) {
+    if (!!userState) {
         return <Link to='/myposts'>My Posts</Link>
-    } else {
+    } else if (!userState) {
         return <>
              <Link to='/login'>Login</Link>
                 
