@@ -3,13 +3,12 @@ import React,{useEffect, useState} from 'react'
 
 
 
+
 const Myren = () => {
+    // const [userState, setUserState] = useState(false)
+    // setUserState(!!localStorage.getItem('token'))
 
-    const [userState, setUserState] = useState(!!localStorage.getItem("token"))
-
-    // useEffect(userState)
-   
-    
+    let userState = !!localStorage.getItem('token')
 
     console.log('logged in ', userState)
 
@@ -22,6 +21,8 @@ const Myren = () => {
                 <Link to='/registration'>Register</Link>
                 </>
     }
+
+    
 }
 
 export default Myren;
