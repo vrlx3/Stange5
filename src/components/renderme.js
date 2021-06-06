@@ -63,7 +63,7 @@ const RenderMe = () => {
             <p id='post_deliver'>{post.willDeliver ? 'Delivery Included' : 'Pickup Only'}</p>
             {/* <p id='post_user'>Posted By: {post.author.username}</p> */}
             <EditPost  className='editpost'/>
-            <button  onClick={(ev) => delthispost(post._id)}>Delete 3</button>
+            <button  onClick={(ev) => delthispost(post._id)}>Delete</button>
             <hr></hr>
             </div>
             )
