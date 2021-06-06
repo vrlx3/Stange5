@@ -1,11 +1,17 @@
 
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
 .nav_links{
     list-style: none;
     background-color: black;
 }
 
 
-
+body{
+    background-color:black;
+}
 
 #header {
     display: flex;
@@ -15,6 +21,7 @@
     width: 100%;
    justify-items: center;
    align-items: center;
+   
 }
 
 #navbar {
@@ -38,13 +45,12 @@
 
 #page {
     display:flex;
-    align-items: center;
     padding: 90px;
     font-family: 'Montserrat', sans-serif;
     justify-content: center; 
-    align-content: center;
     padding-top: 200px;
     font-size: 70px;
+
 }  
 
 #reguser {
@@ -61,11 +67,12 @@
     background-color: teal;
     padding: 90px 20px;
     border-radius: 50px;
-    border: black solid 3px;
+    border: white solid 3px;
 }
 form.loginuser >button{
     border-radius: 20px;
     display: flex;
+    
    
 }
 form.loginuser{
@@ -75,7 +82,41 @@ form.loginuser{
     background-color: teal;
     padding: 60px 20px;
     border-radius: 50px;
-    border: black solid 3px;
+    border: white solid 3px;
     max-width: 150px;
     
+}
+
+#makepost {
+    font-family:Arial, Helvetica, sans-serif;
+    background-color: teal;
+    border: white solid 5px;
+    color: white;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+}
+#postmake{
+    background-color: teal;
+    display: flex;
+    justify-content: center;
+    
+    margin: 5px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+h1{
+    background-color: teal;
+    color: white;
+    display: flex;
+    justify-content: center;
+    border: white solid 5px;
+}
+div{
+    color:white;
+}
+h3{
+    display: flex;
+    justify-content: center;
 }
