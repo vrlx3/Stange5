@@ -39,6 +39,8 @@ const Create = () => {
         setDescription('')
         setPrice('')
     
+
+        location.assign("/allPosts")
     }
 
     return <>
