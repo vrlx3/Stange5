@@ -30,6 +30,23 @@ const RenderMe = () => {
   
    }, [])
 
+   const delthispost = async function(target)  {
+    console.log(target)
+
+       const response = await fetch(`https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/posts/${target}`, { 
+               method: "DELETE",
+               headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': token
+                 }
+            });
+           const result = await response.json();
+           console.log('result', result);
+
+           location.assign("/myposts")
+
+  }
+
    return <>
     <CreateMe />
     <div id='mypost'>
@@ -46,7 +63,7 @@ const RenderMe = () => {
             <p id='post_deliver'>{post.willDeliver ? 'Delivery Included' : 'Pickup Only'}</p>
             <p id='post_user'>Posted By: {post.author.username}</p>
             <EditPost  className='editpost'/>
-            <DeletePost/> 
+            <button  onClick={(ev) => delthispost(post._id)}>Delete 3</button>
             <hr></hr>
             </div>
             )
