@@ -31,6 +31,7 @@ const LogUser = () =>
               console.log(result.data.token);
               localStorage.setItem("token", result.data.token)
             })
+            
             .catch(console.error);
             alert('Thank You for Logging In! Please Confirm Login')
             

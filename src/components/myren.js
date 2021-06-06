@@ -1,11 +1,15 @@
 import {BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import React,{useState} from 'react'
+import React,{useEffect, useState} from 'react'
 
 
 
 const Myren = () => {
+
+    const [userState, setUserState] = useState(!!localStorage.getItem("token"))
+
+    // useEffect(userState)
    
-    const userState = localStorage.getItem("token")
+    
 
     console.log('logged in ', userState)
 
