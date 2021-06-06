@@ -19,9 +19,12 @@ const RenderMe = () => {
                 },
             });
             const res = await response.json();
-            await console.log(res.data.posts)
-           
-            setPosts(res.data.posts);
+            //  console.log(res.data.posts)
+            const all = res.data.posts
+            const filtered = all.filter(x => x.active === true)
+            console.log(all)
+            console.log(filtered)
+            setPosts(filtered);
         }
         fetchPost ();
   
@@ -31,8 +34,9 @@ const RenderMe = () => {
     <CreateMe />
     <div id='mypost'>
         <h1>My Posts</h1>
-        {
-            posts.map(post => <div key={post._id} id={post._id} > 
+        {   
+
+           posts.map(post => <div key={post._id} id={post._id} > 
                         
             <h3 id='post_title'>{post.title}</h3>
             {/* <i>Description</i> */}
