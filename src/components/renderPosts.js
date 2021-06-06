@@ -32,7 +32,7 @@ const RenderPosts = () => {
     async function delthispost  (target)  {
      console.log(target)
 
-    const response = await fetch(`https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/posts/${target}`, { 
+        const response = await fetch(`https://strangers-things.herokuapp.com/api/2104-UIC-RM-WEB-FT/posts/${target}`, { 
                 method: "DELETE",
                 headers: {
                      'Content-Type': 'application/json',
