@@ -1,12 +1,10 @@
 import {BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import LogOutUser from './logoutuser'
+import {LogOutUser, Myren} from './index'
+
+
 
 const Header = () => {
-
-
-
-
-
+    
     return (
         <div id='header'>
             <div id='navbar'>
@@ -14,10 +12,14 @@ const Header = () => {
 
            
             
-            <Link to='/login'>Login</Link>
+            {/* <Link to='/login'>Login</Link>
                 
-            <Link to='/registration'>Register</Link>
-            <Link to='/myposts'>My Posts</Link>
+            <Link to='/registration'>Register</Link> */}
+            
+            
+            {/* <Link to='/myposts'>My Posts</Link> */}
+            <Myren/>
+            
             <Link to='/allPosts'>All Posts</Link>
             <LogOutUser/>
 
